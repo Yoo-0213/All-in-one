@@ -1,38 +1,37 @@
-formulas:
-  Image: file.embeds.filter(value.containsAny("png","jpg","webp","svg","jpeg"))[0]
 properties:
   note.dfdas:
     displayName: 文本
 views:
   - type: table
     name: 表格
+    filters:
+      and:
+        - file.ext != "jpg"
+        - file.ext != "png"
     order:
       - file.name
       - file.ctime
       - tags
-      - formula.Image
       - file.mtime
-      - dfdas
-      - 阅读
     sort:
-      - property: 阅读
-        direction: ASC
-      - property: file.name
-        direction: ASC
-      - property: file.mtime
-        direction: ASC
-      - property: formula.未命名
+      - property: formula.Image
         direction: DESC
     columnSize:
-      file.name: 145
+      file.name: 230
+      note.tags: 81
   - type: cards
-    name: 视图
+    name: 旅游
+    filters:
+      and:
+        - file.folder == "旅游"
     order:
       - file.name
     imageFit: contain
     image: formula.Image
     imageAspectRatio: 1
-  - type: list
+  - type: cards
     name: 视图 2
     markers: bullet
     indentProperties: false
+    image: note.封面
+    imageAspectRatio: 0.65
