@@ -1,0 +1,38 @@
+formulas:
+  Image: file.embeds.filter(value.containsAny("png","jpg","webp","svg","jpeg"))[0]
+properties:
+  note.dfdas:
+    displayName: 文本
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.name
+      - file.ctime
+      - tags
+      - formula.Image
+      - file.mtime
+      - dfdas
+      - 阅读
+    sort:
+      - property: 阅读
+        direction: ASC
+      - property: file.name
+        direction: ASC
+      - property: file.mtime
+        direction: ASC
+      - property: formula.未命名
+        direction: DESC
+    columnSize:
+      file.name: 145
+  - type: cards
+    name: 视图
+    order:
+      - file.name
+    imageFit: contain
+    image: formula.Image
+    imageAspectRatio: 1
+  - type: list
+    name: 视图 2
+    markers: bullet
+    indentProperties: false

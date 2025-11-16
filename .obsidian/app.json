@@ -2,6 +2,9 @@
   "promptDelete": false,
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
-  "defaultViewMode": "preview",
-  "readableLineLength": false
+  "defaultViewMode": "source",
+  "readableLineLength": false,
+  "userIgnoreFilters": null,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./attachments"
 }
