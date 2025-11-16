@@ -10,15 +10,16 @@ views:
         - file.ext != "png"
     order:
       - file.name
+      - file.tags
       - file.ctime
-      - tags
+      - 创建者
       - file.mtime
-    sort:
-      - property: formula.Image
-        direction: DESC
+    sort: []
     columnSize:
       file.name: 230
-      note.tags: 81
+      note.tags: 90
+      file.ctime: 198
+      note.创建者: 83
   - type: cards
     name: 旅游
     filters:
